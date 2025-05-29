@@ -384,7 +384,9 @@ body.light-mode .nav .icon-container:hover {
 .home-content p {
     font-size: 20px;
 }
-
+.home-sci{
+    margin-bottom: 20px;
+}
 .home-sci a {
     display: inline-flex;
     justify-content: center;
@@ -520,6 +522,7 @@ body.light-mode .nav .icon-container:hover {
 .education {
     padding: 50px 0;
     text-align: center;
+    color: var(--text-color);
 }
 
 .education::before {
@@ -529,7 +532,7 @@ body.light-mode .nav .icon-container:hover {
     top: 40;
     bottom: 0;
     width: 4px;
-    background-color: #333;
+    background-color: var(--border-color);
 }
 
 .box {
@@ -543,6 +546,7 @@ body.light-mode .nav .icon-container:hover {
 .education h2 {
     font-size: 36px;
     margin-bottom: 20px;
+    color: var(--text-color);
 }
 
 .education-content {
@@ -558,6 +562,7 @@ body.light-mode .nav .icon-container:hover {
     border-radius: 10px;
     box-shadow: 0 4px 6px var(--shadow-color);
     width: 60%;
+    padding: 10px;
     text-align: left;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     animation: fadeInUp 0.6s ease-in-out both;
@@ -581,7 +586,7 @@ body.light-mode .nav .icon-container:hover {
     top: 40px;
     width: 4px;
     height: 100%;
-    background-color: #333;
+    background-color: var(--border-color);
 }
 
 @keyframes fadeInUp {
@@ -598,20 +603,21 @@ body.light-mode .nav .icon-container:hover {
 
 .education-item h3 {
     font-size: 24px;
-    color: #333;
+    color: var(--text-color);
     margin-bottom: 10px;
 }
 
 .education-duration {
     font-style: italic;
-    color: #666;
+    color: var(--text-color);
+    opacity: 0.8;
     margin-bottom: 10px;
     display: block;
 }
 
 .education-item p {
     font-size: 16px;
-    color: #555;
+    color: var(--text-color);
 }
 
 @media(min-width:900px)
@@ -627,13 +633,13 @@ body.light-mode .nav .icon-container:hover {
     display: flex;
     flex-direction: column;
     align-items: center;
-    color: #fff;
+    color: var(--text-color);
 }
 
 .contact h2 {
     font-size: 50px;
     margin-bottom: 20px;
-    color: #f6f2f2;
+    color: var(--text-color);
     text-align: center;
 }
 
@@ -653,7 +659,7 @@ body.light-mode .nav .icon-container:hover {
 
 .contact-info {
     flex: 1;
-    color: #fff;
+    color: var(--text-color);
     background-color: var(--card-bg);
     padding: 30px;
     border-radius: 10px;
@@ -703,7 +709,7 @@ body.light-mode .nav .icon-container:hover {
 
 .contact-form h2 {
     font-size: 30px;
-    color: #fff;
+    color: var(--text-color);
     margin-bottom: 20px;
 }
 
@@ -717,8 +723,8 @@ body.light-mode .nav .icon-container:hover {
     width: 90%;
     padding: 10px 15px;
     font-size: 16px;
-    color: #333;
-    background-color: #f4f4f4;
+    color: var(--text-color);
+    background-color: var(--card-bg);
     border: 2px solid var(--border-color);
     border-radius: 5px;
     outline: none;
@@ -734,7 +740,7 @@ body.light-mode .nav .icon-container:hover {
     top: 50%;
     left: 15px;
     font-size: 16px;
-    color: #888;
+    color: var(--text-color);
     pointer-events: none;
     transform: translateY(-50%);
     transition: 0.3s ease;
@@ -807,5 +813,135 @@ body.light-mode .nav .icon-container:hover {
 @media (max-width:650px) {
     .home-content {
         flex-direction: column;
+    }
+}
+
+.skills {
+    padding: 60px 20px;
+    text-align: center;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+.skills h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--text-color);
+}
+
+.skills h1 {
+    font-size: 1.8rem;
+    color: var(--text-color);
+    margin: 2rem 0;
+}
+
+.skills .flex {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.skill-item {
+    flex: 0 1 200px;
+    padding: 20px;
+    border-radius: 15px;
+    background-color: var(--card-bg);
+    box-shadow: 0 5px 15px var(--shadow-color);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.skill-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px var(--shadow-color);
+}
+
+.skill-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(0, 238, 255, 0.1),
+        transparent
+    );
+    transition: 0.5s;
+}
+
+.skill-item:hover::before {
+    left: 100%;
+}
+
+.skill-item .relative {
+    width: 120px;
+    height: 120px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.5s ease;
+}
+
+.skill-item:hover .relative {
+    transform: scale(1.1) rotate(5deg);
+}
+
+.skill-item img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.skill-item h3 {
+    margin-top: 1rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+/* Add animation keyframes */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Apply floating animation to skill items */
+.skill-item {
+    animation: float 3s ease-in-out infinite;
+    animation-delay: calc(var(--i) * 0.2s);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .skills .flex {
+        gap: 1rem;
+    }
+    
+    .skill-item {
+        flex: 0 1 150px;
+    }
+    
+    .skill-item .relative {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .skill-item img {
+        width: 60px;
+        height: 60px;
     }
 }
